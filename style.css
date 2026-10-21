@@ -1,0 +1,111 @@
+:root {
+  --bg: #140a04;
+  --bg-2: #22110a;
+  --panel: #2a160b;
+  --line: #5a3a10;
+  --gold: #f2b937;
+  --gold-hi: #ffe08a;
+  --cream: #fff3dc;
+  --muted: #cdb594;
+  --ink: #2a1406;
+  --radius: 22px;
+  --max: 1080px;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+  font-family: "Nunito", system-ui, -apple-system, "Segoe UI", sans-serif;
+  background: var(--bg);
+  color: var(--cream);
+  line-height: 1.6;
+  font-size: 17px;
+}
+img { max-width: 100%; display: block; }
+a { color: var(--gold-hi); }
+a:hover { color: #fff; }
+
+.wrap { max-width: var(--max); margin: 0 auto; padding: 0 20px; }
+h1, h2, h3, .brand, .btn { font-family: "Fredoka", system-ui, sans-serif; font-weight: 700; }
+
+/* ---- Top bar ---- */
+.top {
+  position: sticky; top: 0; z-index: 10;
+  background: rgba(20, 10, 4, .88);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--line);
+}
+.top .wrap { display: flex; align-items: center; justify-content: space-between; height: 64px; gap: 16px; }
+.brand { display: flex; align-items: center; gap: 10px; color: var(--gold); text-decoration: none; font-size: 20px; white-space: nowrap; }
+.brand img { width: 36px; height: 36px; }
+.nav { display: flex; gap: 20px; }
+.nav a { color: var(--muted); text-decoration: none; font-weight: 700; }
+.nav a:hover, .nav a[aria-current] { color: var(--gold-hi); }
+
+/* ---- Hero ---- */
+.hero { position: relative; overflow: hidden; text-align: center; padding: 28px 0 56px;
+  background: radial-gradient(ellipse at 50% 30%, #3a1c0a 0%, var(--bg) 70%); }
+.hero-art { width: 100%; max-width: 1400px; margin: 0 auto; aspect-ratio: 3840 / 1646; object-fit: cover;
+  -webkit-mask: linear-gradient(180deg, #000 75%, transparent); mask: linear-gradient(180deg, #000 75%, transparent); }
+.hero .logo { width: min(520px, 86%); margin: -40px auto 10px; filter: drop-shadow(0 10px 18px rgba(0,0,0,.6)); }
+.hero p.lead { font-size: 20px; color: var(--muted); max-width: 620px; margin: 0 auto 26px; }
+
+.btn {
+  display: inline-flex; align-items: center; gap: 10px;
+  padding: 14px 28px; border-radius: 999px; font-size: 18px; text-decoration: none;
+  color: var(--ink); background: linear-gradient(180deg, var(--gold-hi), var(--gold) 55%, #c9740c);
+  box-shadow: 0 0 0 3px var(--ink), 0 8px 20px rgba(0,0,0,.45);
+}
+.btn:hover { color: var(--ink); filter: brightness(1.08); }
+.btn.soon { cursor: default; }
+.note { color: var(--muted); font-size: 14px; margin-top: 12px; }
+
+/* ---- Sections ---- */
+section { padding: 64px 0; }
+section.alt { background: var(--bg-2); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+h2 { font-size: clamp(28px, 5vw, 42px); color: var(--gold); text-align: center; margin-bottom: 8px; line-height: 1.15; }
+.sub { text-align: center; color: var(--muted); margin: 0 auto 36px; max-width: 640px; }
+
+.features { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 18px; }
+.feature { background: var(--panel); border: 1px solid var(--line); border-radius: var(--radius); padding: 22px; }
+.feature img { width: 84px; height: 84px; margin-bottom: 10px; }
+.feature h3 { color: var(--gold-hi); font-size: 21px; margin-bottom: 6px; }
+.feature p { color: var(--muted); }
+
+.shots { display: flex; gap: 16px; overflow-x: auto; padding: 4px 4px 16px; scroll-snap-type: x mandatory; }
+.shots img { width: 240px; flex: 0 0 auto; border-radius: 18px; scroll-snap-align: start; box-shadow: 0 10px 24px rgba(0,0,0,.5); }
+
+.rules { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; max-width: 760px; margin: 0 auto; }
+.rules span { background: var(--panel); border: 1px solid var(--line); border-radius: 999px; padding: 6px 16px; font-weight: 700; color: var(--cream); }
+
+/* ---- Document pages (privacy, support) ---- */
+.doc { max-width: 760px; margin: 0 auto; padding: 48px 20px 72px; }
+.doc h1 { font-size: clamp(32px, 6vw, 46px); color: var(--gold); line-height: 1.1; margin-bottom: 6px; }
+.doc .meta { color: var(--muted); margin-bottom: 28px; }
+.doc h2 { text-align: left; font-size: 24px; margin: 36px 0 10px; }
+.doc h3 { font-size: 19px; color: var(--gold-hi); margin: 22px 0 6px; }
+.doc p, .doc ul, .doc table { margin-bottom: 14px; }
+.doc ul { padding-left: 22px; }
+.doc li { margin-bottom: 6px; }
+.doc .card { background: var(--panel); border: 1px solid var(--line); border-radius: var(--radius); padding: 20px 22px; margin: 18px 0; }
+.doc table { width: 100%; border-collapse: collapse; font-size: 15px; }
+.doc th, .doc td { text-align: left; vertical-align: top; padding: 10px 8px; border-bottom: 1px solid var(--line); }
+.doc th { color: var(--gold-hi); font-family: "Fredoka", sans-serif; }
+.table-scroll { overflow-x: auto; }
+details { background: var(--panel); border: 1px solid var(--line); border-radius: 16px; padding: 14px 18px; margin-bottom: 10px; }
+summary { cursor: pointer; font-weight: 800; color: var(--cream); }
+details p { margin: 10px 0 0; color: var(--muted); }
+
+/* ---- Footer ---- */
+footer { border-top: 1px solid var(--line); padding: 28px 0 40px; color: var(--muted); font-size: 14px; }
+footer .wrap { display: flex; flex-wrap: wrap; gap: 12px 24px; justify-content: space-between; }
+footer nav { display: flex; gap: 18px; }
+footer a { color: var(--muted); }
+
+@media (max-width: 560px) {
+  body { font-size: 16px; }
+  .nav { gap: 14px; font-size: 15px; }
+  .brand span { display: none; }
+  .hero .logo { margin-top: -16px; }
+  .shots img { width: 200px; }
+}
