@@ -59,6 +59,8 @@ h1, h2, h3, .brand, .btn { font-family: "Fredoka", system-ui, sans-serif; font-w
 .btn:hover { color: var(--ink); filter: brightness(1.08); }
 .btn.soon { cursor: default; }
 .note { color: var(--muted); font-size: 14px; margin-top: 12px; }
+.cta-end { text-align: center; margin-top: 40px; }
+:focus-visible { outline: 3px solid var(--gold-hi); outline-offset: 3px; border-radius: 8px; }
 
 /* ---- Sections ---- */
 section { padding: 64px 0; }
